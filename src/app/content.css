@@ -1,4 +1,7 @@
 .content {
-  height: 100%;
-  background: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+  background: lightsteelblue;
 }
