@@ -1,3 +1,4 @@
+import { FaInstagram } from "react-icons/fa";
 import "./header.css";
 
 export default function Header() {
@@ -5,6 +6,7 @@ export default function Header() {
     <>
       <div className="header">
         <span>Watch Store</span>
+        <FaInstagram className="instagram" />
       </div>
     </>
   );

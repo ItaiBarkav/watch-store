@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  --background: #1a253c;
+  --text: #ffffff;
+}
+
 html,
 body {
   width: 100%;

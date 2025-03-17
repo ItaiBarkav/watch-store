@@ -1,3 +1,12 @@
 .footer {
-  background: lightblue;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+
+  background: var(--background);
+  color: var(--text);
+}
+
+.copy {
+  margin-left: 4px;
 }

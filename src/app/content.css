@@ -1,7 +1,33 @@
 .content {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex: 1;
-  background: lightsteelblue;
+}
+
+.search {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  margin: 12px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  color: #7f7f7f;
+}
+
+.search-input {
+  border: 1px solid var(--background);
+  border-radius: 4px;
+  padding-left: 24px;
+  height: fit-content;
 }

@@ -1,33 +1,51 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { GoSearch } from "react-icons/go";
 import Card, { Item } from "./card";
 import "./content.css";
 import { readItems } from "./dataHandler";
 
 export default function Content() {
   const [items, setItems] = useState<Item[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
     readItems().then((data) => setItems(data));
   }, []);
 
-  // const item: Item = {
-  //   title: "Longines CONQUEST",
-  //   price: 1600,
-  //   image: "/longines_conquest.png",
-  //   description:
-  //     "CONQUEST, L3.830.4.02.6, Automatic watch, Ø 41.00 mm, Stainless steel. Date, Self-winding mechanical movement beating at 25'200 vibrations per hour, with a monocrystalline silicon balance-spring power reserve up to 72 hours. Screw-in crown, Water-resistant to 10 bar, Scratch-resistant sapphire crystal, with several layers of anti-reflective coating on both sides. Sunray green dial, Swiss Super-LumiNova®. Stainless steel bracelet, With triple safety folding clasp and push-piece opening mechanism.",
-  // };
+  const item: Item = {
+    title: "ORIS",
+    price: 800,
+    image: "https://i.imgur.com/DWCKlFd.png",
+    description: "12345",
+  };
 
-  // addItem(item);
+  // for (let index = 0; index < 10; index++) {
+  //   setItem(item, index);
+  // }
 
   return (
     <>
       <div className="content">
-        {items.map((item, index) => (
-          <Card key={index} item={item}></Card>
-        ))}
+        <div className="search">
+          <GoSearch className="search-icon"></GoSearch>
+          <input
+            className="search-input"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          ></input>
+        </div>
+        <div className="items">
+          {items
+            .filter(({ title }) =>
+              title.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((item, index) => (
+              <Card key={index} item={item}></Card>
+            ))}
+        </div>
       </div>
     </>
   );
