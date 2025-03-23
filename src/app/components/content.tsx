@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { GoSearch } from "react-icons/go";
-import Card, { Item } from "./card";
-import "./content.css";
-import { readItems } from "./dataHandler";
+import { Item } from "../configs/item";
+import { readItems } from "../services/dataHandler";
+import "./../styles/content.css";
+import Card from "./card";
 
 export default function Content() {
   const [items, setItems] = useState<Item[]>([]);

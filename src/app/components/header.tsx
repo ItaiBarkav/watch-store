@@ -1,5 +1,5 @@
 import { FaInstagram } from "react-icons/fa";
-import "./header.css";
+import "./../styles/header.css";
 
 export default function Header() {
   return (

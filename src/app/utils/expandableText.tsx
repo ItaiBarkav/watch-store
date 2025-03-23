@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import "./expandableText.css";
+import "./../styles/expandableText.css";
 
 interface ExpandableTextProps {
   text: string;

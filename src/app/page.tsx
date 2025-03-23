@@ -1,7 +1,7 @@
-import Content from "./content";
-import Footer from "./footer";
-import Header from "./header";
-import "./page.css";
+import Content from "./components/content";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import "./styles/page.css";
 
 export default function Home() {
   return (

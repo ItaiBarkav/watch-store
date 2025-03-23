@@ -1,12 +1,6 @@
-import "./card.css";
-import ExpandableText from "./expandableText";
-
-export interface Item {
-  title: string;
-  price: number;
-  image: string;
-  description: string;
-}
+import { Item } from "../configs/item";
+import ExpandableText from "../utils/expandableText";
+import "./../styles/card.css";
 
 export default function Card({ item }: { item: Item }) {
   return (

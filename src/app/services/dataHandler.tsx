@@ -1,6 +1,6 @@
 import { addDoc, collection, doc, getDocs, setDoc } from "@firebase/firestore";
-import { Item } from "./card";
-import { db } from "./firebaseConfig";
+import { db } from "../configs/firebaseConfig";
+import { Item } from "../configs/item";
 
 const WATCH = "watch";
 
