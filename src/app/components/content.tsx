@@ -15,6 +15,10 @@ export default function Content() {
     readItems().then((data) => setItems(data));
   }, []);
 
+  const filteredItems = items.filter(({ title }) =>
+    title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const item: Item = {
     title: "ORIS",
     price: 800,
@@ -39,13 +43,11 @@ export default function Content() {
           ></input>
         </div>
         <div className="items">
-          {items
-            .filter(({ title }) =>
-              title.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-            .map((item, index) => (
-              <Card key={index} item={item}></Card>
-            ))}
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item, index) => <Card key={index} item={item} />)
+          ) : (
+            <div className="no-results">No items found</div>
+          )}
         </div>
       </div>
     </>
